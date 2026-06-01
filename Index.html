@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Sufiyan | L&D Manager & Instructional Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        /* Custom scrollbar for premium aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Fade animation class for sliders */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100">
+
+    <!-- Sticky Navigation Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-indigo-600 text-white rounded-xl shadow-md shadow-indigo-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div class="text-left">
+                    <span class="font-bold text-slate-900 tracking-tight text-lg leading-none block">Mohammed Sufiyan</span>
+                    <span class="text-xs text-slate-500 font-semibold block mt-1">L&D Manager & Instructional Designer</span>
+                </div>
+            </div>
+
+            <!-- Responsive Navigation -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <button onclick="scrollToSection('work'); resetCaseStudyWorkspace();" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Work</button>
+                <button onclick="scrollToSection('design-approach')" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">My Approach</button>
+                <button onclick="scrollToSection('about')" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">About</button>
+                <button onclick="scrollToSection('testimonials')" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Testimonials</button>
+                <a href="https://www.linkedin.com/in/mohammed-sufiyan-568b3612a" target="_blank" rel="noopener noreferrer" class="ml-2 px-3.5 py-2 bg-slate-950 hover:bg-slate-800 text-white rounded-lg text-sm font-bold tracking-wide transition flex items-center gap-1.5">
+                    <span>LinkedIn</span>
+                    <span class="text-xs opacity-60">↗</span>
+                </a>
+            </nav>
+
+            <!-- Small Screen Quick Menu Toggle -->
+            <div class="md:hidden flex items-center gap-2">
+                <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle Menu">
+                    <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-2">
+        <button onclick="scrollToSection('work'); resetCaseStudyWorkspace(); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Work</button>
+        <button onclick="scrollToSection('design-approach'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">My Approach</button>
+        <button onclick="scrollToSection('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">About</button>
+        <button onclick="scrollToSection('testimonials'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Testimonials</button>
+        <a href="https://www.linkedin.com/in/mohammed-sufiyan-568b3612a" target="_blank" rel="noopener noreferrer" class="block text-center px-3.5 py-2 bg-slate-950 hover:bg-slate-800 text-white rounded-lg text-sm font-bold tracking-wide transition">
+            <span>LinkedIn ↗</span>
+        </a>
+    </div>
+
+    <!-- Hero Section (Restored to its independent layout for all viewport sizes) -->
+    <section id="hero" class="relative bg-slate-50 py-16 lg:py-24 overflow-hidden border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Content Column -->
+            <div class="lg:col-span-7 text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-indigo-50 text-indigo-800 font-semibold text-xs tracking-wider uppercase mb-6 border border-indigo-100 shadow-sm">
+                    <span class="h-2.5 w-2.5 rounded-full bg-indigo-600 animate-pulse"></span>
+                    <span>AI-Enabled Instructional Designer</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-none mb-6">
+                    Creating Learning <br class="hidden sm:inline" /><span class="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-800 bg-clip-text text-transparent">That Sticks & Scales.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10">
+                    I construct adaptive learning experiences that help global enterprise teams grow and perform at their best. I leverage cutting-edge AI pipelines and human-centric adult learning frameworks to accelerate skill proficiency.
+                </p>
+
+                <div class="flex flex-wrap justify-start items-center gap-4">
+                    <button onclick="scrollToSection('work')" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-indigo-100 transition flex items-center gap-2">
+                        <span>Explore Work</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                    <button onclick="scrollToSection('design-approach')" class="px-8 py-4 bg-white hover:bg-slate-100 text-slate-800 font-bold rounded-xl border border-slate-300 hover:border-slate-400 shadow-sm transition">
+                        My Approach
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Photo Column -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="relative group w-72 sm:w-80 h-[380px] sm:h-[430px]">
+                    <!-- Soft neon glowing aura background -->
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-indigo-500 via-purple-400 to-indigo-600 rounded-[2.2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                    
+                    <!-- Main Card Container with custom neon-styled border outline -->
+                    <div class="relative w-full h-full rounded-[2rem] overflow-hidden border-2 border-indigo-200/80 bg-slate-100 shadow-2xl flex items-center justify-center p-0.5">
+                        <!-- Hero Image linked directly to Google Drive photo -->
+                        <img id="hero-photo" src="https://lh3.googleusercontent.com/d/1MrEzxi0RF8FRxm1fHkEys7lyRsgDlevB" alt="Mohammed Sufiyan" class="w-full h-full object-cover rounded-[1.85rem] transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/600x800/4f46e5/ffffff?text=Mohammed+Sufiyan'">
+                        
+                        <!-- Premium Gradient Info Tag overlay -->
+                        <div class="absolute inset-x-3 bottom-3 bg-slate-900/80 backdrop-blur-md py-3 px-4 rounded-2xl border border-white/10 flex flex-col justify-center text-left">
+                            <p class="text-white font-extrabold text-sm tracking-tight leading-none">Mohammed Sufiyan</p>
+                            <p class="text-indigo-300 text-[10px] font-bold tracking-wide uppercase mt-1">L&D Manager at Walmart.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div id="work-header" class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="text-left">
+                    <span class="text-sm font-extrabold uppercase tracking-widest text-indigo-600">THE WORK</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">Enterprise Initiatives</h2>
+                    <p class="text-slate-500 mt-1 max-w-xl">Strategic portfolios structured as business-focused case studies. Click on any card below to open the complete deep dive.</p>
+                </div>
+            </div>
+
+            <!-- Case Study Gallery Cards -->
+            <div id="case-study-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- CS1 Card -->
+                <div onclick="selectCaseStudy('cs-1')" class="group relative bg-gradient-to-br from-indigo-50 to-slate-50 hover:border-indigo-400 rounded-2xl border border-slate-200/80 p-8 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-80 overflow-hidden text-left">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-indigo-500/5 group-hover:bg-indigo-500/10 rounded-full blur-xl transition-all duration-300"></div>
+                    <div class="flex items-center justify-between relative z-10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-indigo-500 bg-indigo-100/60 px-2 py-0.5 rounded">Featured Strategy</span>
+                        <span class="p-1.5 rounded-lg bg-white shadow-sm text-slate-400 group-hover:text-indigo-600 group-hover:scale-110 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                    </div>
+                    <div class="my-auto relative z-10">
+                        <h3 class="text-xl font-black text-slate-900 leading-snug group-hover:text-indigo-900 transition-colors">Leadership Acceleration for Supply Chain (LASC)</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-3">Transitioning operational DC managers into proactive people leaders who address feedback, own team development, and model high-trust behaviors at scale.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors">4 Months | High-Stress</span>
+                        <span class="text-xs font-bold text-indigo-600 group-hover:underline flex items-center gap-1"><span>Explore details</span><span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- CS2 Card -->
+                <div onclick="selectCaseStudy('cs-2')" class="group relative bg-gradient-to-br from-emerald-50 to-slate-50 hover:border-emerald-400 rounded-2xl border border-slate-200/80 p-8 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-80 overflow-hidden text-left">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-emerald-500/5 group-hover:bg-emerald-500/10 rounded-full blur-xl transition-all duration-300"></div>
+                    <div class="flex items-center justify-between relative z-10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600 bg-emerald-100/60 px-2 py-0.5 rounded">Immersive Experience</span>
+                        <span class="p-1.5 rounded-lg bg-white shadow-sm text-slate-400 group-hover:text-emerald-600 group-hover:scale-110 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                    </div>
+                    <div class="my-auto relative z-10">
+                        <h3 class="text-xl font-black text-slate-900 leading-snug group-hover:text-emerald-900 transition-colors">Interview Learning - eCommerce</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-3">A standardized scenario-based interview and evaluation framework designed to standardize candidate assessments and eliminate hiring bias across eCommerce squads.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors">Ongoing Initiative</span>
+                        <span class="text-xs font-bold text-indigo-600 group-hover:underline flex items-center gap-1"><span>Explore details</span><span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- CS3 Card -->
+                <div onclick="selectCaseStudy('cs-3')" class="group relative bg-gradient-to-br from-violet-50 to-slate-50 hover:border-violet-400 rounded-2xl border border-slate-200/80 p-8 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-80 overflow-hidden text-left">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-violet-500/5 group-hover:bg-violet-500/10 rounded-full blur-xl transition-all duration-300"></div>
+                    <div class="flex items-center justify-between relative z-10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-violet-600 bg-violet-100/60 px-2 py-0.5 rounded">University Partnership</span>
+                        <span class="p-1.5 rounded-lg bg-white shadow-sm text-slate-400 group-hover:text-violet-600 group-hover:scale-110 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                    </div>
+                    <div class="my-auto relative z-10">
+                        <h3 class="text-xl font-black text-slate-900 leading-snug group-hover:text-violet-950 transition-colors">Omni Merchandising Foundations</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-3">Redesigning dry annual regulatory training into an adaptive, narrative-driven gamified framework with interactive scenario pathways.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors">30-90 Days in Role</span>
+                        <span class="text-xs font-bold text-indigo-600 group-hover:underline flex items-center gap-1"><span>Explore details</span><span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- CS4 Card -->
+                <div onclick="selectCaseStudy('cs-4')" class="group relative bg-gradient-to-br from-cyan-50 to-slate-50 hover:border-cyan-400 rounded-2xl border border-slate-200/80 p-8 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-80 overflow-hidden text-left md:col-start-1 md:col-span-1.5 lg:col-start-1 lg:col-span-1">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-cyan-500/5 group-hover:bg-cyan-500/10 rounded-full blur-xl transition-all duration-300"></div>
+                    <div class="flex items-center justify-between relative z-10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-cyan-600 bg-cyan-100/60 px-2 py-0.5 rounded">Finance Academy</span>
+                        <span class="p-1.5 rounded-lg bg-white shadow-sm text-slate-400 group-hover:text-cyan-600 group-hover:scale-110 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                    </div>
+                    <div class="my-auto relative z-10">
+                        <h3 class="text-xl font-black text-slate-900 leading-snug group-hover:text-cyan-900 transition-colors">Fundamentals of Finance</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-3">Upskilling non-financial operations managers on business acumen, cash flow mechanics, and key EBITDA drivers to scale strategic budget ownership.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors">6-Week Hybrid Flow</span>
+                        <span class="text-xs font-bold text-indigo-600 group-hover:underline flex items-center gap-1"><span>Explore details</span><span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- CS5 Card -->
+                <div onclick="selectCaseStudy('cs-5')" class="group relative bg-gradient-to-br from-amber-50 to-slate-50 hover:border-amber-400 rounded-2xl border border-slate-200/80 p-8 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between h-80 overflow-hidden text-left md:col-start-2 md:col-span-1.5 lg:col-start-3 lg:col-span-1">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/5 group-hover:bg-amber-500/10 rounded-full blur-xl transition-all duration-300"></div>
+                    <div class="flex items-center justify-between relative z-10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-600 bg-amber-100/60 px-2 py-0.5 rounded">Leadership Development</span>
+                        <span class="p-1.5 rounded-lg bg-white shadow-sm text-slate-400 group-hover:text-amber-600 group-hover:scale-110 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                    </div>
+                    <div class="my-auto relative z-10">
+                        <h3 class="text-xl font-black text-slate-900 leading-snug group-hover:text-amber-950 transition-colors">Stretch Assignment - Coaching</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-3">A scalable leadership stretch-assignment architecture pairing high-potential directors with executives, powered by automated coaching feedback loops.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors">Continuous Roadmap</span>
+                        <span class="text-xs font-bold text-indigo-600 group-hover:underline flex items-center gap-1"><span>Explore details</span><span>→</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workspace Detailed View (Dynamically Loaded) -->
+            <div id="case-study-workspace" class="hidden mt-12 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300 text-left">
+                <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
+                    <button onclick="resetCaseStudyWorkspace()" class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-600 hover:text-indigo-600 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        <span>Return to All Projects</span>
+                    </button>
+                    <span class="text-xs font-semibold text-slate-400">Project Details Workspace</span>
+                </div>
+
+                <div class="bg-slate-950 p-6 sm:p-10 text-white relative text-left">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-900/40 rounded-full blur-2xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span id="cs-badge" class="px-3 py-1 bg-white/10 text-emerald-300 text-xs font-black tracking-wider uppercase rounded-full border border-white/20"></span>
+                            <span id="cs-duration" class="text-slate-400 text-xs font-medium"></span>
+                        </div>
+                        <h3 id="cs-name" class="text-2xl sm:text-4xl font-black tracking-tight mb-4 text-white"></h3>
+                        <p id="cs-intro" class="text-slate-300 text-base sm:text-lg max-w-4xl leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <!-- Metrics Highlights Grid -->
+                <div id="cs-metrics-container" class="px-6 sm:px-10 pt-8 pb-2 text-left">
+                    <div id="cs-metrics-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Challenge and Training details -->
+                <div class="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+                    <!-- Challenge block -->
+                    <div class="lg:col-span-5 bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="p-1.5 bg-red-100 text-red-600 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                </span>
+                                <h4 id="cs-challenge-title" class="font-extrabold text-slate-900 text-lg"></h4>
+                            </div>
+                            <p id="cs-challenge-text" class="text-slate-600 text-sm sm:text-base leading-relaxed"></p>
+                        </div>
+                    </div> 
+                    <!-- Solutions block -->
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <!-- Solution card 1 (Training) -->
+                        <div class="bg-emerald-50/60 border border-emerald-100 p-5 rounded-2xl mb-6 shadow-sm">
+                            <span class="text-xs font-black uppercase tracking-wider text-emerald-800 block mb-3 pb-1 border-b border-emerald-100">THE TRAINING SOLUTION</span>
+                            <div id="cs-solution-statement" class="text-emerald-950 font-semibold text-base sm:text-lg leading-snug">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Solution card 2 (Non-Training) -->
+                        <div id="cs-nontraining-card" class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl mb-6 shadow-sm hidden">
+                            <span class="text-xs font-black uppercase tracking-wider text-indigo-800 block mb-3 pb-1 border-b border-indigo-100">NON-TRAINING SOLUTION SUPPORT</span>
+                            <div id="cs-solution-statement2" class="text-slate-900 font-semibold text-base sm:text-lg leading-snug">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Interactive Blueprint Accordion wrapper -->
+                        <div id="cs-accordion-container" class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm text-left hidden">
+                            <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                                <h4 id="cs-blueprint-title" class="font-extrabold text-slate-900 text-lg"></h4>
+                                <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">Interactive Architecture</span>
+                            </div>
+                            <div id="cs-accordion-items" class="space-y-4">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mockups / Visual items showcase -->
+                <div id="cs-mockups-container" class="px-6 sm:px-10 py-8 border-t border-slate-200/60 bg-slate-50/80 text-left">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="text-left">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600">Visual Portfolio Attachments</span>
+                            <h4 class="text-xl font-extrabold text-slate-900 tracking-tight mt-0.5">Project Mockups & Architecture Blueprints</h4>
+                        </div>
+                    </div>
+
+                    <div id="cs-mockups-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Footer elements inside Workspace panel -->
+                <div class="bg-slate-100 p-6 flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-slate-200">
+                    <button onclick="resetCaseStudyWorkspace()" class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-600 hover:text-indigo-600 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        <span>Return to All Projects</span>
+                    </button>
+                    <div class="flex gap-2 flex-wrap justify-end">
+                        <button onclick="selectCaseStudy('cs-1')" class="cs-tab-btn px-3 py-1 text-xs font-bold rounded-lg transition-all" id="btn-cs-1">LASC</button>
+                        <button onclick="selectCaseStudy('cs-2')" class="cs-tab-btn px-3 py-1 text-xs font-bold rounded-lg transition-all" id="btn-cs-2">eCommerce Interview</button>
+                        <button onclick="selectCaseStudy('cs-3')" class="cs-tab-btn px-3 py-1 text-xs font-bold rounded-lg transition-all" id="btn-cs-3">Merchandising</button>
+                        <button onclick="selectCaseStudy('cs-4')" class="cs-tab-btn px-3 py-1 text-xs font-bold rounded-lg transition-all" id="btn-cs-4">Finance</button>
+                        <button onclick="selectCaseStudy('cs-5')" class="cs-tab-btn px-3 py-1 text-xs font-bold rounded-lg transition-all" id="btn-cs-5">Coaching</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Approach Section (6 Steps Methodology) -->
+    <section id="design-approach" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-left mb-12 max-w-3xl">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-indigo-600">Instructional Beliefs</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">My Design Approach</h2>
+                <p class="text-slate-500 mt-2">How I leverage modern AI technology and adult learning theories to scale enterprise performance.</p>
+            </div>
+
+            <!-- Row 1: Foundational Analysis Phases -->
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-xs font-black uppercase tracking-widest text-slate-400">Phase 01: Foundational Analysis</span>
+                <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <!-- Foundational Card 01 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between text-left hover:border-indigo-300 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black text-lg mb-6 shadow-sm">01</div>
+                        <h3 class="font-extrabold text-slate-900 text-lg mb-2">Performance Gap Analysis</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Deconstructing organizational friction points and mapping exact KPI deficiencies before writing a single line of curriculum.</p>
+                    </div>
+                </div>
+                <!-- Foundational Card 02 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between text-left hover:border-indigo-300 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black text-lg mb-6 shadow-sm">02</div>
+                        <h3 class="font-extrabold text-slate-900 text-lg mb-2">Cognitive Task Analysis</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Extracting and de-biasing implicit expert insights to model how the top 5% of performers successfully navigate complex workflows.</p>
+                    </div>
+                </div>
+                <!-- Foundational Card 03 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between text-left hover:border-indigo-300 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black text-lg mb-6 shadow-sm">03</div>
+                        <h3 class="font-extrabold text-slate-900 text-lg mb-2">Action-Mapped Architecture</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Designing training built purely on performance actions, avoiding data dumps, and focusing content strictly on real-world implementation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: AI Execution Phases -->
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-xs font-black uppercase tracking-widest text-indigo-500">Phase 02: AI Execution</span>
+                <div class="h-px bg-indigo-100 flex-1"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Method 04 -->
+                <div class="bg-indigo-600 p-6 rounded-2xl shadow-xl shadow-indigo-100 text-left">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-white text-indigo-600 flex items-center justify-center font-black text-lg mb-6">04</div>
+                        <h3 class="font-extrabold text-white text-lg mb-2">AI-Powered Prototyping</h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">Shifting from slow storyboard phases to rapid, generative script and scene mockups that accelerate organizational review cycles.</p>
+                    </div>
+                </div>
+                <!-- Method 05 -->
+                <div class="bg-indigo-600 p-6 rounded-2xl shadow-xl shadow-indigo-100 text-left">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-white text-indigo-600 flex items-center justify-center font-black text-lg mb-6">05</div>
+                        <h3 class="font-extrabold text-white text-lg mb-2">AI-Assisted Simulations</h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">Creating interactive roleplay scenarios with intelligent, context-aware coaching and instant safe-to-fail practice spaces built on real KPIs.</p>
+                    </div>
+                </div>
+                <!-- Method 06 -->
+                <div class="bg-indigo-600 p-6 rounded-2xl shadow-xl shadow-indigo-100 text-left">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-white text-indigo-600 flex items-center justify-center font-black text-lg mb-6">06</div>
+                        <h3 class="font-extrabold text-white text-lg mb-2">Adaptive Personalization</h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">Moving away from one-size-fits-all training to algorithmic personalization that scales immediately to individual learner skill gaps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white border-t border-slate-200 text-left">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-indigo-600">L&D Partnership</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1 mb-6">Empowering Teams to Achieve High Performance</h2>
+                <div class="prose text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                    <p>I bridge the gap between business objectives and human capability. By leveraging adult learning principles, modern technology stack integrations, and a deep sense of user empathy, I craft learning architectures that deliver measurable, scalable results.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="https://www.linkedin.com/in/mohammed-sufiyan-568b3612a" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2">
+                        <span>Connect on LinkedIn</span>
+                        <span class="text-sm">↗</span>
+                    </a>
+                    <a href="mailto:msufiyan2806@gmail.com" class="px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl transition">Send Email</a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+                <h3 class="font-extrabold text-slate-900 text-lg mb-2">Technology Stack & Expertise</h3>
+                <p class="text-xs text-slate-500 mb-6">Industry standard tools applied directly to rapid learning and system design.</p>
+                <div id="tech-stack-container" class="flex flex-wrap gap-2">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section id="testimonials" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-left mb-12 max-w-3xl">
+                <span class="text-xs font-black uppercase tracking-widest text-indigo-600">Vetted Endorsements</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">Testimonials</h2>
+                <p class="text-slate-500 mt-2 text-sm sm:text-base">What business partners and L&D leaders say about my performance-focused instructional approach.</p>
+            </div>
+
+            <div class="relative max-w-5xl">
+                <div class="bg-white rounded-3xl border border-slate-200/80 shadow-xl p-8 sm:p-12 relative overflow-hidden text-left min-h-[360px] flex items-center">
+                    <div id="testimonial-slide-wrapper" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10 w-full">
+                        
+                        <!-- Left Profile Card inside slider -->
+                        <div class="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left border-b md:border-b-0 md:border-r border-slate-100 pb-8 md:pb-0 md:pr-8">
+                            <div class="relative mb-5 flex-shrink-0">
+                                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-indigo-600 bg-slate-50 flex items-center justify-center shadow-lg">
+                                    <img id="testimonial-avatar" src="" alt="" class="w-full h-full object-cover hidden" onerror="onAvatarError()">
+                                    <span id="testimonial-initials" class="text-xl sm:text-2xl font-black text-indigo-600"></span>
+                                </div>
+                            </div>
+                            <div class="space-y-1 w-full">
+                                <h4 id="testimonial-author" class="font-black text-slate-900 text-lg sm:text-xl tracking-tight leading-tight"></h4>
+                                <p id="testimonial-role" class="text-xs sm:text-sm font-bold tracking-wide uppercase text-indigo-600"></p>
+                            </div>
+                        </div>
+
+                        <!-- Right Quote section -->
+                        <div class="md:col-span-8 flex flex-col justify-between h-full min-h-[160px]">
+                            <div class="relative">
+                                <!-- Quote Symbol Decorator -->
+                                <div class="absolute -top-6 -left-4 text-indigo-600 opacity-10 pointer-events-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M11.172 6a5.172 5.172 0 0 0-5.172 5.172V20h8.828v-8.828h-4.414A.414.414 0 0 1 10 10.758a2.758 2.758 0 0 1 2.758-2.758H14V6h-2.828Zm10 0a5.172 5.172 0 0 0-5.172 5.172V20H24v-8.828h-4.414a.414.414 0 0 1-.414-.414A2.758 2.758 0 0 1 21.93 8H23V6h-1.828Z" /></svg>
+                                </div>
+                                <p id="testimonial-quote" class="text-slate-700 italic text-base sm:text-lg md:text-xl font-medium leading-relaxed text-left pr-4 relative z-10"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slider Indicators / buttons (Left Aligned Group) -->
+                <div class="flex items-center justify-start gap-4 mt-6">
+                    <button onclick="prevTestimonial()" class="p-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 shadow-md hover:shadow-lg border border-slate-200/50 hover:text-indigo-600 transition" aria-label="Previous Testimonial">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div id="testimonial-dots" class="flex items-center gap-2">
+                        <!-- Dots rendered via JS -->
+                    </div>
+                    <button onclick="nextTestimonial()" class="p-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 shadow-md hover:shadow-lg border border-slate-200/50 hover:text-indigo-600 transition" aria-label="Next Testimonial">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer layout -->
+    <footer class="bg-slate-950 text-white py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div class="text-left">
+                <p class="font-bold text-base leading-none">Mohammed Sufiyan</p>
+                <p class="text-xs text-slate-400 mt-1.5 font-semibold">L&D Manager & Instructional Designer</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-400">
+                <span class="hover:text-white transition cursor-pointer" onclick="scrollToSection('work'); resetCaseStudyWorkspace();">Work</span>
+                <span>•</span>
+                <span class="hover:text-white transition cursor-pointer" onclick="scrollToSection('design-approach')">Design Approach</span>
+                <span>•</span>
+                <span class="hover:text-white transition cursor-pointer" onclick="scrollToSection('about')">About</span>
+                <span>•</span>
+                <span class="hover:text-white transition cursor-pointer" onclick="scrollToSection('testimonials')">Testimonials</span>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/mohammed-sufiyan-568b3612a" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a>
+            </div>
+            <p class="text-xs text-slate-500">© <span id="footer-year"></span> Mohammed Sufiyan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JS Application Controller logic -->
+    <script>
+        /* Portfolio Data definitions loaded perfectly matching visitor values */
+        const portfolioData = {
+            socials: {
+                linkedin: 'https://www.linkedin.com/in/mohammed-sufiyan-568b3612a',
+                email: 'msufiyan2806@gmail.com'
+            },
+            techStack: [
+                { name: 'Articulate Storyline 360', category: 'Authoring' },
+                { name: 'Rise 360', category: 'Authoring' },
+                { name: 'WeAreLearning', category: 'Interactives & AI' },
+                { name: 'HTML/CSS/JS Simulations', category: 'Interactives & AI' },
+                { name: 'LMS (CSOD, Thinkific)', category: 'Systems' },
+                { name: 'Adobe Experience Manager(AEM)', category: 'Systems' },
+                { name: 'Figma', category: 'Design & Media' },
+                { name: 'Canva', category: 'Design & Media' }
+            ],
+            caseStudies: [
+                {
+                    id: 'cs-1',
+                    name: 'Leadership Acceleration for Supply Chain (LASC)',
+                    badge: 'Featured Strategy Case Study',
+                    duration: '4 Months | High-Stress environments',
+                    intro: 'Transitioning operational DC managers into proactive people leaders who address feedback, own team development, and model high-trust behaviors at scale.',
+                    challengeTitle: 'Challenge: The Operational Tunnel-Vision',
+                    challengeText: 'Supply Chain Distribution Centers navigate high-stress, metric-driven shifts. While DC managers excelled at mechanical operational metrics, they struggled to handle people leadership moments constructively. Gaps arose in delivering active performance coaching and handling difficult feedforward conversations, leading to inconsistency across shift transitions.',
+                    solutionStatement: 'We built a structured upskilling path to transition transaction coordinators into strategic people leaders.',
+                    blueprintTitle: 'The Strategic Blueprints',
+                    highlights: [], // Metrics highlights removed specifically from LASC case study
+                    images: [
+                        { id: 'img-1-1', title: 'Capability Architecture', caption: 'The learning strategy divides capabilities into Self, Interpersonal, and Systems.', placeholderColor: 'from-indigo-500/10 to-blue-500/10', textColor: 'text-indigo-600', simulatedType: 'checklist', url: 'https://lh3.googleusercontent.com/d/1V_E6CDSdQJ92Sqy3QzwrYFYPDUVNsWF_' }
+                    ],
+                    accordion: [
+                        {
+                            title: '1) The Operational Gap',
+                            introText: 'Supply Chain environments demand operational consistency across multi-shift, high-output conditions. Gaps arise not from a lack of leadership concept awareness, but rather from executing behaviors in live pressure moments:',
+                            cards: [
+                                { id: 'card-1-1', tag: 'Gap A', front: 'Conversational Avoidance', back: 'Leaders often default or route difficult feedback sessions to People Partners/HR instead of handling conversations directly.' },
+                                { id: 'card-1-2', tag: 'Gap B', front: 'Inconsistent Shift Messaging', back: 'Different leadership styles across changing DC shifts can create misalignment, weakening trust loops across teams.' },
+                                { id: 'card-1-3', tag: 'Gap C', front: 'Execution vs Coaching Balance', back: 'A heavy focus on physical process metrics distracts leaders from consistent team development and active performance coaching.' }
+                            ]
+                        },
+                        {
+                            title: '2) Prepare. Practice. Apply.',
+                            introText: 'We constructed a scalable, modular model grounded in real DC scenarios to develop leadership capabilities through action:',
+                            cards: [
+                                { id: 'card-2-1', tag: 'Prepare', front: 'Micro-Learning and Pre-work', back: 'Gamified digital activity designed to establish awareness and evaluate individual decision tendencies before live sessions.' },
+                                { id: 'card-2-2', tag: 'Practice', front: 'High-stakes Simulations', back: 'Kinesthetic, real DC scenarios. Leaders practice challenging conversations, receive direct peer diagnostics, and build trust patterns.' },
+                                { id: 'card-2-3', tag: 'Apply', front: 'Structured Reinforcement', back: 'Follow-ups including direct manager touchpoints, team-building alignment, and Training Tuesdays micro-learning modules.' }
+                            ]
+                        },
+                        {
+                            title: '3) Curriculum Focus Tiers',
+                            introText: 'A tiered architecture matching skill evolution with high-leverage business metrics:',
+                            cards: [
+                                { id: 'card-3-1', tag: 'Self Level', front: 'Leadership Style & Ownership', back: 'Understanding individual triggers, situational pressure management, and owning personal presence as a leader.' },
+                                { id: 'card-3-2', tag: 'Interpersonal Level', front: 'Conversations & Coaching', back: 'Structuring continuous feedback sessions, performance mitigation, and establishing career-path checkins.' },
+                                { id: 'card-3-3', tag: 'System Level', front: 'Culture & Team Building', back: 'Shaping shifts alignment, leading through ambiguous operating conditions, and building trust loops at scale.' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'cs-2',
+                    name: 'Interview Learning - eCommerce',
+                    badge: 'Immersive Experience',
+                    duration: 'Ongoing',
+                    intro: 'A standardized scenario-based interview and evaluation framework designed to standardize candidate assessments and eliminate hiring bias across cross-functional eCommerce squads.',
+                    challengeTitle: 'Challenge',
+                    challengeText: 'eCommerce teams lack a structured and rigorous interview process for evaluating new candidates. As a result, hiring decisions are often based on subjective judgment rather than a consistent evaluation framework, leading to suboptimal hiring outcomes.',
+                    solutionStatement: '1) Pre-Work: 2-hour self-paced eCommerce interview simulator module.\n\n2) ILT/VILT Workshop: Immersive calibration session on structured interviewing, mitigating cognitive biases, and scoring role-based case studies.\n\n3) Post-Work: Immediate delivery of role-specific Interview Preparation templates & scoring rubrics.',
+                    solutionStatement2: '1) Certificate requirement: All interviewers must complete the full learning program before joining the hiring process. This ensures only qualified participants evaluate candidates, leading to more consistent decisions.\n\n2) Calibrated Panel Syncs: Implementing mandatory 5-minute recruiter-manager pre-brief alignments before every candidate loop.\n\n3) Structured Panel Interviews: A neutral cross-functional panel will assess candidates, minimizing team bias and guaranteeing evaluations based on skills, culture, and values.',
+                    blueprintTitle: 'Interactive Learning Mechanics',
+                    highlights: [
+                        { title: '98%', label: 'Program NPS', desc: 'Highly rated candidate onboarding feedback scores across all engineering loops.' },
+                        { title: '100%', label: 'Application', desc: 'Full adoption of the structured interview guidelines across all eCommerce hiring tracks.' }
+                    ],
+                    images: [
+                        { id: 'img-2-1', title: 'Training Gaps Whiteboard', caption: 'These training gaps were identified during the whiteboarding session with the SME.', placeholderColor: 'from-emerald-500/10 to-teal-500/10', textColor: 'text-emerald-700', simulatedType: 'table', url: 'https://lh3.googleusercontent.com/d/1L3JrfmFeWvULHDTxI8hcO38dfo9Id6lY' },
+                        { id: 'img-2-2', title: 'High-level Outline (HLO)', caption: 'The HLO is mapped to address identified gaps and align the training outcomes with the required performance expectations.', placeholderColor: 'from-blue-500/10 to-indigo-500/10', textColor: 'text-indigo-700', simulatedType: 'slides', url: 'https://lh3.googleusercontent.com/d/1SdkBNYkxqJtEz9ckLjEqPjdYowLj51i3' }
+                    ],
+                    accordion: []
+                },
+                {
+                    id: 'cs-3',
+                    name: 'Omni Merchandising Foundations',
+                    badge: 'Walmart US People Excellence Program',
+                    duration: 'A-Accredited Arkansas University',
+                    intro: 'Redesigning dry annual regulatory training into an adaptive, narrative-driven gamified framework with interactive scenario pathways.',
+                    challengeTitle: 'Challenge',
+                    challengeText: 'Merchandise audience members are not consistently reaching full competency in critical merchandising skills. The previous prework was too time-consuming, and many participants did not complete it before class. This weakened readiness and engagement before the classroom experience.',
+                    solutionStatement: 'Re-design the program to prioritize core merchandising foundations by removing duplicate or low-value content. Use more intentional prework, Microsoft Teams-based automated engagement, and interactive activities to prepare participants before class and reinforce learning throughout the week, while keeping the schedule practical for merchants’ business responsibilities.',
+                    blueprintTitle: 'Gamified Pedagogic Principles',
+                    highlights: [
+                        { title: '94% NPS', label: 'Program NPS', desc: '20% increase in NPS post program redesign.' },
+                        { title: '35% Boost', label: 'Engagement Increase', desc: 'Teams channel automation using PowerAutomate, creating everyday engagement before, during, and after the class.' }
+                    ],
+                    images: [
+                        { id: 'img-3-1', title: 'Coaching Helper Blueprint', caption: 'An AI-powered evaluation assistant blueprint used to collect qualitative program feedback.', placeholderColor: 'from-purple-500/10 to-pink-500/10', textColor: 'text-purple-700', simulatedType: 'map', url: '' }
+                    ],
+                    accordion: []
+                },
+                {
+                    id: 'cs-4',
+                    name: 'Fundamentals of Finance',
+                    badge: 'Finance Academy',
+                    duration: '6-Week Hybrid Flow',
+                    intro: 'Upskilling Sam’s Club leadership team on financial reports, with a special focus on Profit and Loss (P&L) statements.',
+                    challengeTitle: 'Challenge',
+                    challengeText: 'Clubs managers are highly skilled at execution but frequently struggle with financial modeling. When looking at Journal tool or calculating P&L they default to waiting for financial partners, leaving direct efficiency wins and margins unmanaged on the ground.',
+                    solutionStatement: '1) Financial Foundations: Developed three self-paced learning modules covering key financial concepts, including Profit & Loss (P&L) fundamentals, Sales Economics, and an overview of the Real Estate business landscape.\n\n2) Simulation-Based Tool Training: Designed interactive, scenario-based simulations in Storyline 360 to provide hands-on walkthroughs of the P&L and Journal tools, enabling learners to apply concepts in realistic business contexts.\n\n3) Assessments and Knowledge Validation: Created gamified quizzes and assessments to measure learner understanding, reinforce key concepts, and evaluate current knowledge and skill levels.',
+                    blueprintTitle: 'Finance Curriculum Flow',
+                    highlights: [
+                        { title: '72% NPS', label: 'Initial Performance Indicator', desc: 'At the beginning of the program, an LMS system issue temporarily impacted learner experience and contributed to lower NPS scores. Following resolution of the issue, the current quarter’s NPS has improved to 88%.' },
+                        { title: '15% reduction', label: 'Reduced Support Calls', desc: 'Reduction in support calls from field leadership by 15%.' }
+                    ],
+                    accordion: []
+                },
+                {
+                    id: 'cs-5',
+                    name: 'Stretch Assignment - Coaching',
+                    badge: 'Leadership Development Strategy',
+                    duration: 'Continuous Roadmap',
+                    intro: 'A scalable leadership stretch-assignment path designed to pair emerging managers with senior executives, backed by automated coaching loops.',
+                    challengeTitle: 'Challenge - Spark Growth',
+                    challengeText: 'Emerging managers and senior managers often hit a growth ceiling. While they excel in operational functions, they lack a structured stretch assignment pipeline to build broader system strategic thinking. At the same time, senior executive mentors find it challenging to consistently provide guidance without significant admin overhead.',
+                    solutionStatement: '1) Coaching for the Coaches – Webinar + Tenor AI Simulation: Delivered a facilitator enablement program consisting of a live webinar and Tenor AI–based simulation exercises designed to enhance coaching effectiveness, build confidence, and ensure consistency in coaching approaches across teams.\n\n2) 3 days coaching event: Matched 60 coaches with 300 coachees based on registration criteria, enabling targeted and personalized coaching conversations..\n\n3) 360-Degree Retrospective: Simplified, action-mapped calibration templates to lock down developmental milestones.',
+                    blueprintTitle: 'Coaching Engagement Mechanics',
+                    highlights: [
+                        { title: '94% Retention', label: 'Emerging Leaders retained', desc: 'Retaining key emerging leaders inside fast-growing enterprise business segments.' },
+                        { title: '3.5x Projects', label: 'Cross-Functional Executions', desc: 'Accelerated execution on high-priority sponsor projects through active mentoring.' }
+                    ],
+                    accordion: []
+                }
+            ],
+            testimonials: [
+                { 
+                    id: 't-1', 
+                    quote: "Sufi brings a strong foundation in instructional design, paired with the mindset of a strategic learning partner. He has an exceptional ability to navigate ambiguity, anticipate needs early, and create solutions that are both learner-centered and operationally sustainable. Whether leading complex learning initiatives, improving workflows, or mentoring peers, he approaches every challenge with calm confidence, thorough research, and a commitment to quality. He doesn't just build training; he designs experiences that drive real performance and growth.", 
+                    author: 'Krishnaveni Ilanthirayan', 
+                    role: 'Senior Manager L&D - Walmart',
+                    avatar: 'https://lh3.googleusercontent.com/d/1tpP9RZZrvP647-D7pIy1vT4Tt1Pb9Zhs'
+                },
+                { 
+                    id: 't-2', 
+                    quote: 'Sufi is an absolute pleasure to work with and has the 2 key traits that can’t be taught: Curiosity and enthusiasm. We worked together in two of the most challenging and fast changing parts of the business: Walmart Merchandising and eCommerce. He is very quick study, manages stakeholders very well, and seeks the deeply understand the space he is working with to add the important context to everything he designs.', 
+                    author: 'Matthew Becher', 
+                    role: 'Head of eCommerce L&D - Walmart',
+                    avatar: 'https://lh3.googleusercontent.com/d/1eV_9G8FFEHSpB0YtpYHI9oCYYJwcaFbC'
+                },
+                { 
+                    id: 't-3', 
+                    quote: 'Sufi is an outstanding L&D partner who I’ve had the pleasure of working with for three years to build programs at scale for Merchandising Learning. I’ve seem him grow into an excellent business partner and project manager who delivers solutions that create efficiency and business enablement, including designing and building innovative learning solutions across platforms. Sufi is adept at managing through change, always curious and willing to roll up his sleeves. I’m always happy to have him on my bench.', 
+                    author: 'Samantha Dinnis', 
+                    role: 'Senior Manager - Global Talent',
+                    avatar: 'https://lh3.googleusercontent.com/d/1phTcVr3wAEll1j4Q8yxlhDnCML-1hodu'
+                },
+                { 
+                    id: 't-4', 
+                    quote: 'I had the privilege of working with Mohammed Sufiyan (Sufi) on a training initiative at Walmart, and I was consistently impressed by the depth of insight and thoughtfulness he brought to every discussion. Sufi demonstrated exceptional attention to detail, ensuring that every component of the training was clear, practical, and aligned with best practices.', 
+                    author: 'Amber Bauer', 
+                    role: 'Director - Talent Management - Walmart',
+                    avatar: 'https://lh3.googleusercontent.com/d/1IjyXwddGJaqJfBjBAOp1azh50zxuDfGD'
+                }
+            ]
+        };
+
+        let activeTestimonialIndex = 0;
+        let selectedCaseStudyId = null;
+        let activeAccordionIndex = 0;
+        let flippedCards = {};
+
+        // On Page Load
+        window.onload = function() {
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
+            renderTechStack();
+            renderTestimonialSlide();
+            renderTestimonialDots();
+        };
+
+        // Scroll helper function
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Toggle mobile menu view
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        function renderTechStack() {
+            const container = document.getElementById('tech-stack-container');
+            container.innerHTML = '';
+            
+            // Render beautiful structured tags with dynamic category indicators
+            portfolioData.techStack.forEach(tech => {
+                const tag = document.createElement('div');
+                tag.className = 'bg-white px-3 py-2 rounded-xl border border-slate-200 flex flex-col gap-1 shadow-sm hover:border-indigo-400 hover:shadow-md transition duration-200';
+                tag.innerHTML = `
+                    <span class="text-slate-800 font-extrabold text-xs sm:text-sm leading-tight">${tech.name}</span>
+                    <span class="text-[9px] font-bold text-indigo-500 uppercase tracking-widest">${tech.category}</span>
+                `;
+                container.appendChild(tag);
+            });
+        }
+
+        function selectCaseStudy(csId) {
+            selectedCaseStudyId = csId;
+            const cs = portfolioData.caseStudies.find(item => item.id === csId);
+            if (!cs) return;
+
+            // Highlight tab selections in Workspace footers
+            document.querySelectorAll('.cs-tab-btn').forEach(btn => {
+                btn.className = 'cs-tab-btn px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-white hover:bg-slate-200 text-slate-600 border border-slate-200';
+            });
+            const activeBtn = document.getElementById(`btn-${csId}`);
+            if (activeBtn) {
+                activeBtn.className = 'cs-tab-btn px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white';
+            }
+
+            // Populate text elements
+            document.getElementById('cs-badge').textContent = cs.badge;
+            document.getElementById('cs-duration').textContent = cs.duration;
+            document.getElementById('cs-name').textContent = cs.name;
+            document.getElementById('cs-intro').textContent = cs.intro;
+            document.getElementById('cs-challenge-title').textContent = cs.challengeTitle;
+            document.getElementById('cs-challenge-text').textContent = cs.challengeText;
+
+            // Solution Formatter
+            const solutionContainer = document.getElementById('cs-solution-statement');
+            solutionContainer.innerHTML = '';
+            renderCustomBulletStatements(cs.solutionStatement, solutionContainer, 'emerald');
+
+            // Non-Training Solution check
+            const nonTrainingCard = document.getElementById('cs-nontraining-card');
+            if (cs.solutionStatement2) {
+                nonTrainingCard.classList.remove('hidden');
+                const nonTrainingContainer = document.getElementById('cs-solution-statement2');
+                nonTrainingContainer.innerHTML = '';
+                renderCustomBulletStatements(cs.solutionStatement2, nonTrainingContainer, 'indigo');
+            } else {
+                nonTrainingCard.classList.add('hidden');
+            }
+
+            // Highlights (Dynamically hide container when empty)
+            const metricsContainer = document.getElementById('cs-metrics-grid');
+            const metricsParent = document.getElementById('cs-metrics-container');
+            metricsContainer.innerHTML = '';
+            if (cs.highlights && cs.highlights.length > 0) {
+                metricsParent.classList.remove('hidden');
+                cs.highlights.forEach(h => {
+                    const mBox = document.createElement('div');
+                    mBox.className = 'relative bg-gradient-to-br from-white to-slate-50 rounded-2xl border-2 border-indigo-100 p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between';
+                    mBox.innerHTML = `
+                        <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-indigo-600"></div>
+                        <div class="pl-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400">${h.label}</span>
+                                <span class="p-1 rounded-full bg-indigo-50 text-indigo-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                            </div>
+                            <h4 class="text-2xl sm:text-3xl font-black tracking-tight text-indigo-600 mt-0.5">${h.title}</h4>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2.5">${h.desc}</p>
+                        </div>
+                    `;
+                    metricsContainer.appendChild(mBox);
+                });
+            } else {
+                metricsParent.classList.add('hidden');
+            }
+
+            // Blueprint Accordion check
+            const accordionWrapper = document.getElementById('cs-accordion-container');
+            if (cs.accordion && cs.accordion.length > 0) {
+                accordionWrapper.classList.remove('hidden');
+                document.getElementById('cs-blueprint-title').textContent = cs.blueprintTitle;
+                activeAccordionIndex = 0;
+                renderAccordion(cs.accordion);
+            } else {
+                accordionWrapper.classList.add('hidden');
+            }
+
+            // Mockup Artifacts Rendering (Dynamically hide mockup header/grid container when empty)
+            const mockupsContainer = document.getElementById('cs-mockups-container');
+            const mockupsGrid = document.getElementById('cs-mockups-grid');
+            mockupsGrid.innerHTML = '';
+            if (cs.images && cs.images.length > 0) {
+                if (mockupsContainer) mockupsContainer.classList.remove('hidden');
+                cs.images.forEach(img => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-5 flex flex-col justify-between';
+                    
+                    let assetHtml = '';
+                    if (img.url) {
+                        assetHtml = `<img src="${img.url}" alt="${img.title}" class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-[1.02]" onerror="this.style.display='none'; document.getElementById('fallback-${img.id}').classList.remove('hidden');">`;
+                    }
+                    
+                    // Premium Simulated preview fallback (Built-in custom SVG vector styled elements)
+                    const fallbackHtml = `
+                        <div id="fallback-${img.id}" class="w-full h-full bg-gradient-to-br ${img.placeholderColor || 'from-slate-50 to-slate-100'} p-1 transition-transform duration-300 group-hover:scale-[1.02] ${img.url ? 'hidden' : ''}">
+                            ${getSimulatedAssetTemplate(img.simulatedType)}
+                        </div>
+                    `;
+
+                    card.innerHTML = `
+                        <div class="relative rounded-xl overflow-hidden border border-slate-200 h-64 md:h-72 group bg-slate-100/60 p-4 flex items-center justify-center">
+                            ${assetHtml}
+                            ${fallbackHtml}
+                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-slate-950 font-black text-xs uppercase px-3.5 py-2 rounded-xl shadow-md tracking-wider">Visual Blueprint</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-left">
+                            <h5 class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug">${img.title}</h5>
+                            <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">${img.caption}</p>
+                        </div>
+                    `;
+                    mockupsGrid.appendChild(card);
+                });
+            } else {
+                if (mockupsContainer) mockupsContainer.classList.add('hidden');
+            }
+
+            // Show Workspace Layout
+            document.getElementById('case-study-workspace').classList.remove('hidden');
+            setTimeout(() => {
+                scrollToSection('case-study-workspace');
+            }, 100);
+        }
+
+        // Return to cards gallery
+        function resetCaseStudyWorkspace() {
+            document.getElementById('case-study-workspace').classList.add('hidden');
+            selectedCaseStudyId = null;
+            scrollToSection('work');
+        }
+
+        function renderCustomBulletStatements(text, container, styleTheme) {
+            if (!text) return;
+            const lines = text.split('\n').filter(line => line.trim() !== '');
+            const hasNumberedPattern = lines.some(line => /^\d+\)/.test(line.trim()));
+
+            if (!hasNumberedPattern) {
+                const para = document.createElement('p');
+                para.className = 'text-slate-800 text-sm leading-relaxed whitespace-pre-line text-left italic font-semibold';
+                para.textContent = text;
+                container.appendChild(para);
+                return;
+            }
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'space-y-3 mt-3';
+
+            const bubbleStyles = {
+                indigo: 'bg-indigo-600 text-white shadow-indigo-100',
+                emerald: 'bg-emerald-600 text-white shadow-emerald-100',
+            };
+
+            lines.forEach(line => {
+                const trimmed = line.trim();
+                const match = trimmed.match(/^(\d+)\)\s*(.*?)(?::\s*(.*))?$/);
+                if (!match) {
+                    const extraPara = document.createElement('p');
+                    extraPara.className = 'text-slate-700 text-xs sm:text-sm leading-relaxed font-semibold pl-11 text-left';
+                    extraPara.textContent = trimmed;
+                    wrapper.appendChild(extraPara);
+                    return;
+                }
+
+                const [, number, title, desc] = match;
+                const row = document.createElement('div');
+                row.className = 'flex gap-4 items-start bg-white/90 hover:bg-white p-3.5 rounded-xl border border-slate-200 transition-all duration-200 shadow-sm';
+                row.innerHTML = `
+                    <div class="flex-shrink-0 w-7 h-7 rounded-full ${bubbleStyles[styleTheme]} flex items-center justify-center text-xs font-black shadow-md">
+                        ${number}
+                    </div>
+                    <div class="text-left flex-1">
+                        <h5 class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug">${title}</h5>
+                        ${desc ? `<p class="text-slate-600 text-xs sm:text-sm mt-1 font-medium leading-relaxed">${desc}</p>` : ''}
+                    </div>
+                `;
+                wrapper.appendChild(row);
+            });
+            container.appendChild(wrapper);
+        }
+
+        function renderAccordion(accordionData) {
+            const container = document.getElementById('cs-accordion-items');
+            container.innerHTML = '';
+
+            accordionData.forEach((tab, index) => {
+                const isOpen = index === activeAccordionIndex;
+                const accordionBox = document.createElement('div');
+                accordionBox.className = `border rounded-xl transition-all overflow-hidden ${isOpen ? 'border-indigo-600 bg-white shadow-md' : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50'}`;
+                
+                accordionBox.innerHTML = `
+                    <button onclick="toggleAccordionIndex(${index})" class="w-full p-4 flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-bold text-sm sm:text-base ${isOpen ? 'text-indigo-600' : 'text-slate-800'}">${tab.title}</span>
+                        <span class="transform transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-400"><polyline points="9 18 15 12 9 6"/></svg>
+                        </span>
+                    </button>
+                    ${isOpen ? `
+                        <div class="p-4 pt-0 border-t border-slate-100 bg-slate-50/50">
+                            <div class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-medium pt-3">${tab.introText}</div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-3">
+                                ${tab.cards.map((card, cardIdx) => {
+                                    const cardId = `card-${index}-${cardIdx}`;
+                                    const isFlipped = !!flippedCards[cardId];
+                                    return `
+                                        <div onclick="toggleCardFlip('${cardId}', event)" class="flip-card w-full h-40 perspective-1000 cursor-pointer group">
+                                            <div class="flip-card-inner w-full h-full transform-style-3d transition-transform duration-500 relative ${isFlipped ? 'rotate-y-180' : ''}">
+                                                <!-- Front side of card -->
+                                                <div class="flip-card-front absolute w-full h-full backface-hidden rounded-xl border border-slate-200 bg-white p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                                                    <div class="flex items-center justify-between">
+                                                        <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-600">${card.tag}</span>
+                                                        <span class="text-slate-300 group-hover:text-indigo-500 transition-colors">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                                        </span>
+                                                    </div>
+                                                    <p class="font-extrabold text-slate-900 text-xs sm:text-sm text-left leading-snug">${card.front}</p>
+                                                    <div class="text-[10px] text-slate-400 font-bold text-left uppercase flex items-center gap-1">
+                                                        <span>Tap to flip</span><span>→</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Back side of card -->
+                                                <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180 rounded-xl bg-slate-950 text-white p-4 flex flex-col justify-between shadow-lg">
+                                                    <div class="flex items-center justify-between border-b border-slate-800 pb-1">
+                                                        <span class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Description</span>
+                                                        <span class="text-slate-500">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                                        </span>
+                                                    </div>
+                                                    <p class="text-[11px] sm:text-xs text-slate-200 text-left font-semibold leading-relaxed overflow-y-auto max-h-[85px] pr-1">${card.back}</p>
+                                                    <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider text-left">Tap to flip back</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                `;
+                container.appendChild(accordionBox);
+            });
+        }
+
+        function toggleAccordionIndex(idx) {
+            activeAccordionIndex = idx;
+            const cs = portfolioData.caseStudies.find(item => item.id === selectedCaseStudyId);
+            if (cs && cs.accordion) {
+                renderAccordion(cs.accordion);
+            }
+        }
+
+        function toggleCardFlip(cardId, event) {
+            event.stopPropagation();
+            flippedCards[cardId] = !flippedCards[cardId];
+            const cs = portfolioData.caseStudies.find(item => item.id === selectedCaseStudyId);
+            if (cs && cs.accordion) {
+                renderAccordion(cs.accordion);
+            }
+        }
+
+        /* Simulated blueprints / illustrations generators */
+        function getSimulatedAssetTemplate(type) {
+            switch (type) {
+                case 'checklist':
+                    return `
+                        <div class="w-full h-full bg-slate-50 p-4 font-mono text-[9px] text-slate-600 flex flex-col justify-between select-none">
+                            <div class="border-b border-slate-200 pb-2 mb-2 font-bold uppercase tracking-wider text-slate-800 text-[10px] flex justify-between"><span>SHIFT HANDOVER PROTOCOLS</span><span class="text-indigo-600">LASC v4</span></div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-emerald-500 flex items-center justify-center text-white text-[7px]">✓</span><span>Align transition logs</span></div>
+                                <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-emerald-500 flex items-center justify-center text-white text-[7px]">✓</span><span>Deliver performance feedforward</span></div>
+                                <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-emerald-500 flex items-center justify-center text-white text-[7px]">✓</span><span>Resolve active blockages</span></div>
+                                <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 border border-slate-300 rounded"></span><span class="text-slate-400">Log supervisor alignment rating</span></div>
+                            </div>
+                            <div class="text-[7px] text-slate-400 mt-2 border-t border-slate-200 pt-2 font-semibold">Mohammed Sufiyan - L&D Enterprise Design System</div>
+                        </div>
+                    `;
+                case 'table':
+                    return `
+                        <div class="w-full h-full bg-slate-50 p-3 flex flex-col justify-between font-mono text-[8px] text-slate-600 select-none">
+                            <div class="border-b border-slate-200 pb-1.5 font-bold uppercase tracking-wider text-slate-800 text-[9px] flex justify-between"><span>EVALUATION SCORECARD</span><span class="text-emerald-600">BIAS CALIBRATION v1</span></div>
+                            <div class="space-y-1 flex-1 mt-1">
+                                <div class="grid grid-cols-12 gap-1 border-b border-slate-200 pb-1 font-extrabold text-slate-700 text-[7.5px]"><span class="col-span-4">CAPABILITY</span><span class="col-span-5">STANDARD PARAMETER</span><span class="col-span-3 text-right">METRIC</span></div>
+                                <div class="grid grid-cols-12 gap-1 text-[7px] items-center py-0.5"><span class="col-span-4 font-bold text-slate-800">System Design</span><span class="col-span-5 line-clamp-1">Structured interview criteria</span><span class="col-span-3 text-right text-emerald-600 font-black">Level 1-5</span></div>
+                                <div class="grid grid-cols-12 gap-1 text-[7px] items-center py-0.5"><span class="col-span-4 font-bold text-slate-800">Bias Check</span><span class="col-span-5 line-clamp-1">Contrast mitigation log</span><span class="col-span-3 text-right text-emerald-600 font-black">Calibration</span></div>
+                                <div class="grid grid-cols-12 gap-1 text-[7px] items-center py-0.5"><span class="col-span-4 font-bold text-slate-800">Frontline Ops</span><span class="col-span-5 line-clamp-1">Feedback calibration loop</span><span class="col-span-3 text-right text-emerald-600 font-black">Scorecard</span></div>
+                            </div>
+                            <div class="text-[7px] text-slate-400 border-t border-slate-200 pt-1.5 font-semibold">Mohammed Sufiyan - L&D Enterprise Design System</div>
+                        </div>
+                    `;
+                case 'slides':
+                    return `
+                        <div class="w-full h-full bg-slate-900 text-white p-4 flex flex-col justify-between font-mono text-[9px] select-none">
+                            <div class="flex justify-between items-center border-b border-slate-800 pb-2"><span class="font-extrabold text-indigo-400 tracking-wider text-[8px]">BIAS CALIBRATION SESSION</span><span class="text-[7px] text-slate-500">SLIDE 04 / 12</span></div>
+                            <div class="my-auto space-y-1.5 py-1"><h6 class="text-[11px] font-black text-white tracking-tight">Structured Loop Calibration</h6><p class="text-slate-400 text-[8px] leading-relaxed">Objective: Mitigate contrast bias by locking scorecards before panels meet.</p></div>
+                            <div class="flex justify-between items-center border-t border-slate-800 pt-2 text-[7px] text-slate-500"><span>eCommerce Frontline Initiatives</span><span>Mohammed Sufiyan</span></div>
+                        </div>
+                    `;
+                case 'map':
+                    return `
+                        <div class="w-full h-full bg-slate-50 p-4 flex flex-col justify-between font-mono text-[9px] text-slate-600 select-none">
+                            <div class="border-b border-slate-200 pb-2 mb-2 font-bold uppercase tracking-wider text-slate-800 text-[10px] flex justify-between"><span>NARRATIVE FLOWCHART</span><span class="text-purple-600">GAMIFICATION v2</span></div>
+                            <div class="flex-1 flex items-center justify-around gap-2 py-2"><div class="border border-purple-300 bg-purple-50 px-1.5 py-1 rounded text-[8px] font-extrabold text-purple-700">Level 1 Decision</div><span class="text-purple-400 font-extrabold">→</span><div class="border border-emerald-300 bg-emerald-50 px-1.5 py-1 rounded text-[8px] font-extrabold text-emerald-700">Safe Branch</div><span class="text-slate-300">/</span><div class="border border-red-300 bg-red-50 px-1.5 py-1 rounded text-[8px] font-extrabold text-red-700">Risk Branch</div></div>
+                            <div class="text-[7px] text-slate-400 border-t border-slate-200 pt-2 font-semibold">Mohammed Sufiyan - L&D Enterprise Design System</div>
+                        </div>
+                    `;
+                default:
+                    return `<div class="w-full h-full bg-slate-100 flex items-center justify-center text-xs text-slate-400 font-medium font-mono">No Mockup Available</div>`;
+            }
+        }
+
+        // Testimonial Slider Mechanics
+        function renderTestimonialSlide() {
+            const item = portfolioData.testimonials[activeTestimonialIndex];
+            if (!item) return;
+
+            const sliderWrapper = document.getElementById('testimonial-slide-wrapper');
+            sliderWrapper.classList.remove('fade-in');
+            
+            // Trigger quick layout reflow to restart animation
+            void sliderWrapper.offsetWidth; 
+            sliderWrapper.classList.add('fade-in');
+
+            const avatarEl = document.getElementById('testimonial-avatar');
+            const initialsEl = document.getElementById('testimonial-initials');
+
+            if (item.avatar) {
+                avatarEl.src = item.avatar;
+                avatarEl.alt = item.author;
+                avatarEl.classList.remove('hidden');
+                initialsEl.classList.add('hidden');
+            } else {
+                avatarEl.classList.add('hidden');
+                initialsEl.classList.remove('hidden');
+                initialsEl.textContent = item.author.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+            }
+
+            document.getElementById('testimonial-author').textContent = item.author;
+            document.getElementById('testimonial-role').textContent = item.role;
+            document.getElementById('testimonial-quote').textContent = item.quote;
+            
+            updateTestimonialDots();
+        }
+
+        // Safe Fallback when raw third-party avatars fail to resolve
+        function onAvatarError() {
+            const avatarEl = document.getElementById('testimonial-avatar');
+            const initialsEl = document.getElementById('testimonial-initials');
+            const item = portfolioData.testimonials[activeTestimonialIndex];
+            
+            avatarEl.classList.add('hidden');
+            initialsEl.classList.remove('hidden');
+            initialsEl.textContent = item.author.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+        }
+
+        function renderTestimonialDots() {
+            const dotsContainer = document.getElementById('testimonial-dots');
+            dotsContainer.innerHTML = '';
+            portfolioData.testimonials.forEach((_, index) => {
+                const btn = document.createElement('button');
+                btn.className = `h-2.5 rounded-full transition-all duration-300 ${index === activeTestimonialIndex ? 'w-8 bg-indigo-600' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`;
+                btn.ariaLabel = `Go to testimonial slide ${index + 1}`;
+                btn.onclick = () => {
+                    activeTestimonialIndex = index;
+                    renderTestimonialSlide();
+                };
+                dotsContainer.appendChild(btn);
+            });
+        }
+
+        function updateTestimonialDots() {
+            const dots = document.getElementById('testimonial-dots').children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = `h-2.5 rounded-full transition-all duration-300 ${i === activeTestimonialIndex ? 'w-8 bg-indigo-600' : 'i === activeTestimonialIndex' ? 'w-8 bg-indigo-600' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`;
+            }
+        }
+
+        function prevTestimonial() {
+            activeTestimonialIndex = activeTestimonialIndex === 0 ? portfolioData.testimonials.length - 1 : activeTestimonialIndex - 1;
+            renderTestimonialSlide();
+        }
+
+        function nextTestimonial() {
+            activeTestimonialIndex = activeTestimonialIndex === portfolioData.testimonials.length - 1 ? 0 : activeTestimonialIndex + 1;
+            renderTestimonialSlide();
+        }
+    </script>
+</body>
+</html>
